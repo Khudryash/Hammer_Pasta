@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.hammer_pasta.Menu;
+import com.example.hammer_pasta.PastaMenu;
 import com.example.hammer_pasta.adapter.FoodAdapter;
 import com.example.hammer_pasta.model.FoodModel;
 
@@ -20,10 +21,13 @@ public class DishList extends AsyncTask<String, Void, List<FoodModel>> {
     String category;
     @SuppressLint("StaticFieldLeak")
     Context ctx;
+    @SuppressLint("StaticFieldLeak")
+    RecyclerView recyclerView;
 
-    public DishList(String category, Context ctx) throws IOException, InterruptedException {
+    public DishList(String category, Context ctx, RecyclerView recyclerView) throws IOException, InterruptedException {
         this.category = category;
         this.ctx = ctx;
+        this.recyclerView = recyclerView;
     }
 
     @Override
@@ -69,12 +73,11 @@ public class DishList extends AsyncTask<String, Void, List<FoodModel>> {
     @Override
     protected void onPostExecute(List<FoodModel> s) {
         super.onPostExecute(s);
-        RecyclerView foodrecycler = Menu.foodrecycler;
         FoodAdapter foodAdapter;
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.ctx, RecyclerView.VERTICAL, false);
-        foodrecycler.setLayoutManager(layoutManager);
+        this.recyclerView.setLayoutManager(layoutManager);
         foodAdapter = new FoodAdapter(this.ctx, s);
-        foodrecycler.setAdapter(foodAdapter);
+        this.recyclerView.setAdapter(foodAdapter);
     }
 }

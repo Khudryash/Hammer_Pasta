@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(viewPager);
 
-        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager());
 
         vpAdapter.addFragment(new Menu(), "Меню");
         vpAdapter.addFragment(new Profile(), "Профиль");

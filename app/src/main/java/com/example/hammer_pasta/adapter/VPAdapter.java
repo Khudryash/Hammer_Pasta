@@ -13,8 +13,8 @@ public class VPAdapter extends FragmentPagerAdapter {
     private final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
     private final ArrayList<String> fragmentTitle = new ArrayList<>();
 
-    public VPAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
+    public VPAdapter(@NonNull FragmentManager fm) {
+        super(fm);
     }
 
     @NonNull
@@ -44,4 +44,6 @@ public class VPAdapter extends FragmentPagerAdapter {
         return fragmentTitle.get(position);
 
     }
+
+
 }
