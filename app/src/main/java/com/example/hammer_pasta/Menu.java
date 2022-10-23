@@ -1,23 +1,17 @@
 package com.example.hammer_pasta;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.hammer_pasta.adapter.BannerAdapter;
-import com.example.hammer_pasta.adapter.VPAdapter;
 import com.example.hammer_pasta.data.DishList;
-import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,11 +24,11 @@ public class Menu extends Fragment {
     BannerAdapter bannerAdapter;
     public static RecyclerView foodrecycler;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_menu, container, false);
+
 
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
